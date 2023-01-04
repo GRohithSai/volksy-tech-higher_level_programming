@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name__ = "__main__":
+if __name__ == "__main__":
     from calculator_1 import add, sub, div, mul
     from sys import argv
     if len(argv) != 4:
@@ -9,7 +9,7 @@ if __name__ = "__main__":
     n2 = int(argv[3])
     if operator == "+":
         print("{} + {} = {}".format(n1, n2, add(n1, n2)))
-    elif operator ++ "-":
+    elif operator == "-":
         print("{:d} - {:d} = {:d}".format(n1, n2, sub(n1, n2)))
     elif operator == "*":
         print("{:d} * {:d} = {:d}".format(n1, n2, mul(n1, n2)))
