@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list[]):
-    i = 0
-    while i < len(list_result):
-        print("{:d} {:s} divisible by 2".format(my_list[i], "is" if list_result[i] else "is not"))
-        i += 1
+    new_list = []
+    for i in my_list[]:
+        if i % 2 == 0:
+            my_list.append(True)
+        else:
+            my_list.append(False)
+    return new_list
