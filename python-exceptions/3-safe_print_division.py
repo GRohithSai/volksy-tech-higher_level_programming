@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-def safe_print_division(a, b):
-    a = 12
-    b = 2
-    result = safe_print_division(a, b)
+def safe_print_division(a, b)
     try:
-        print("{:d} / {:d} = {}".format(a, b, result))
+        result = a/b
+        return result
     except:
-        pass
+        result = None
+        return result
     finally:
-        print("{:d} / {:d} = {}".format(a, b, result))
+        print("Inside result: {}".format(result))
