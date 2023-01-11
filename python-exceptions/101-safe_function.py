@@ -1,8 +1,8 @@
 #!usr/bin/python3
-def safe_print_integer_err(value):
+def safe_function(fct, *args):
     from sys import stderr
     try:
         return (fct(*args))
     except Exception a err:
-        print("Excption: {}".fomrat(err), file=stderr)
+        print("Excption: {}".format(err), file=stderr)
         return None
