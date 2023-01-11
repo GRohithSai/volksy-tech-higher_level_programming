@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""class"""
+""" creating class"""
 
 
 class Square:
     """square class"""
+
     def __init__(self, size=0):
         """construcotr"""
         if type(size) is not int:
