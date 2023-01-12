@@ -109,5 +109,5 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> len(matrix_divided(matrix, div)) == len(matrix)
 True
 >>> matrix = [[2, 4], [7, 9]]
->>> div = float(inf)
+>>> div = inf(float)
 >>> matrix_divided(matrix, div)
