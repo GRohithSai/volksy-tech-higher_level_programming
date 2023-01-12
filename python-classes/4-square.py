@@ -6,12 +6,12 @@ class Square:
     """Square with private instance attribute and instantiation"""
     def __init__(self, size=0):
         """initailize data"""
-        self.__size=size
+        self.__size = size
 
     def area(self):
         """return square area"""
         return(self.__size ** 2)
-        
+
     @property
     def size(self):
         """retrieve size"""
