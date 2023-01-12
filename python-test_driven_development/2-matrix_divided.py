@@ -22,6 +22,8 @@
     Returns a new matrix
     You are not allowed to import any module
 """
+
+
 def matrix_divided(matrix, div):
     """ Divide a matrix by a number div """
     list_error = "matrix must be a mtrix (list of lists) of integers/floats"
