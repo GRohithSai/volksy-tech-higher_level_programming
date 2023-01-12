@@ -17,7 +17,7 @@ class Square:
         if self.__size <= 0:
             print()
         else:
-            for i in range(sele.__size):
+            for i in range(self.__size):
                 for j in range(self.__size):
                     print('#', end='')
                 print()
@@ -33,4 +33,4 @@ class Square:
             if type(value) is not int:
                 raise TypeError("size must be an integer")
             if value < 0:
-                raise ValueErro("size must be >= 0")
+                raise ValueError("size must be >= 0")
