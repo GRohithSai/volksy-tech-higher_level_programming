@@ -13,12 +13,12 @@ Write a function that adds 2 integers.
     You are not allowed to import any module
 
 >>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(3, 5)
+>>> add_integer(1, 2)
 8
->>> add_integer(3.5, 5)
+>>> add_integer(100, -2)
 8
->>> add_integer(3, 5.5)
+>>> add_integer(2)
 8
->>> add_integer(3.5, 5.5)
+>>> add_integer(100.3, -2)
 8
 >>> add_integer("3", 5)
