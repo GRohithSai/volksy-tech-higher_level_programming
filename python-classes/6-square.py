@@ -5,7 +5,6 @@
 class Square:
     """Square with private instance attribute and instantiation"""
 
-    
     def __init__(self, size=0, position=(0, 0)):
         """Initialize data"""
         self.size = size
@@ -23,10 +22,10 @@ class Square:
         for row in range(self.__position[1]):
             print()
         for i in range(self.__size):
-            for j inrange(self.__position[0]):
+            for j in range(self.__position[0]):
                 print(" ", end="")
             for k in range(self.__size):
-                print('#', end='')
+                    print('#', end='')
             print()
 
     @property
@@ -50,11 +49,11 @@ class Square:
 
     @position.setter
     def position(self, value):
-        "Sets position and handles errors"""
+        """Sets position and handles errors"""
         if len(value) < 2:
-            raise TypeError('position must be atuple of 2 positive integers')
-        if type(value[0]) is not int or type(value[1]) is not int:
-                raise TypeError('position must be atuple of 2 positive integers')
-        if value[0] <0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
-            self.__position = value
+        if type(value[0]) is not int or type(value[1]) is not int:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        self.__position = value
