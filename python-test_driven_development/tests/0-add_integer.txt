@@ -49,3 +49,9 @@ ValueError: cannot convert NaN to integer
 >>> add_integer(2, float('nan'))
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer (2.3, None)
+Tracebck (most recent call last):
+TypeError: b must be an integer
