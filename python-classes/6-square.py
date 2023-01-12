@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""creating class"""
 class Square:
     """Square with private instance attribute and instantiation"""
 
@@ -10,7 +11,7 @@ class Square:
 
     def area(self):
         """Return square area"""
-        return (sele.__size ** 2)
+        return (self.__size ** 2)
 
     def my_print(self):
         """Print square with # to stdout"""
@@ -22,7 +23,7 @@ class Square:
         for i in range(self.__size):
             for j inrange(self.__position[0]):
                 print(" ", end="")
-            for k in range(sle.__size):
+            for k in range(self.__size):
                 print('#', end='')
             print()
 
@@ -52,6 +53,6 @@ class Square:
             raise TypeError('position must be atuple of 2 positive integers')
         if type(value[0] is not int or type(value[1]) is not int:
                 raise TypeError('position must be atuple of 2 positive integers')
-        if value[0]<0 or value[1] < 0:
+        if value[0] <0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
             self.__position = value
