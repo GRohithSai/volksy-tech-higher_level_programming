@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """creating class"""
+
+
 class Square:
     """Square with private instance attribute and instantiation"""
-
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize data"""
