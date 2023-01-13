@@ -1,40 +1,30 @@
 #!/usr/bin/python3
-"""
-    class Rectangle that inherits from BaseGeometry
-    (7-base_geometry.py). (task based on 8-rectangle.py)
-    Instantiation with width and height: def
-    __init__(self, width, height)::
-        width and height must be private.
-        No getter or setter
-        width and height must be positive
-        integers validated by integer_validator
-    the area() method must be implemented
-    print() should print, and str() should return,
-    the following rectangle description:
-    [Rectangle] <width>/<height>
-"""
-
-
+# 9-rectangle.py
+# Brennan D Baraban <375@holbertonschool.com>
+"""Defines a class Rectangle that inherits from BaseGeometry."""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """ rectangle class inherits from basegeometry """
+    """Represent a rectangle using BaseGeometry."""
 
     def __init__(self, width, height):
-        """ initialization """
-        super().integer_validator("height", height)
+        """Intialize a new Rectangle.
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+        """
         super().integer_validator("width", width)
-        self.__height = height
         self.__width = width
+        super().integer_validator("height", height)
+        self.__height = height
 
     def area(self):
-        """ returns the area of the rectangle """
+        """Return the area of the rectangle."""
         return self.__width * self.__height
 
     def __str__(self):
-        """ returns [Rectangle] <width>/<height> string """
-        a = str(self.__width)
-        b = str(self.__height)
-        return "[" + __class__.__name__ + "] " \
-            + a + "/" + b
+        """Return the print() and str() representation of a Rectangle."""
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += str(self.__width) + "/" + str(self.__height)
+        return string
