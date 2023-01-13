@@ -37,4 +37,4 @@ class Rectangle(BaseGeometry):
         a = str(self.__width)
         b = str(self.__height)
         return "[" + __class__.__name__ + "] " \
-            + a + "/" + bi
+            + a + "/" + b
