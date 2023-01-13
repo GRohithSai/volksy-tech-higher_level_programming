@@ -104,8 +104,26 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 17, in matrix_divided
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[2, 4], [7, 9]]
+>>> div = 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  FIle "<stdin>", line17, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix = [[10, 8], [5, 10]]
 >>> div = 2
 >>> len(matrix_divided(matrix, div)) == len(matrix)
 True
->>> 
+>>> matrix = [[2, 8]]
+>>> div = 2
+Traceback (most recent call last):
+  File "<stdin>", line1, in <module>
+  File "<stdin>", line17, in matrix_divided
+TypeError: matrix must have multiple lists
+>>> matrix = []
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[]]
+>>> print(matrix_divided(matrix, 3))
+[[]]
