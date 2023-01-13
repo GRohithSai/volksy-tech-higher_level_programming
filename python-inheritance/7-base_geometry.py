@@ -16,7 +16,7 @@
 """
 
 
-Class BaseGeometry:
+class BaseGeometry:
     """ BaseGeometry class empty """
 
     def area(self):
