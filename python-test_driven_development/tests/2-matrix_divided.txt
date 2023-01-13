@@ -104,7 +104,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 17, in matrix_divided
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> matrix = [[2, 4], [7, 9]]
+>>> matrix = [[2, 4], [7.4, 9.5]]
 >>> div = 2
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
