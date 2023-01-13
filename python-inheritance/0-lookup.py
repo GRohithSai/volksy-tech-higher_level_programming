@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """Search for all the attributes and methods of object"""
-    return (method for method in dir(obj))
+    return [method for method in dir(obj)]
