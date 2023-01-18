@@ -8,4 +8,4 @@ def write_file(filename="", text=""):
     lines = 0
     with open(filename, encoding='utf-8') as f:
         a = f.read()
-        print(len(f.read()))
+    return len(f.read())
