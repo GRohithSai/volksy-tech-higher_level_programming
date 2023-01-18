@@ -5,6 +5,6 @@
 
 def write_file(filename="", text=""):
     """"Return the number of lines in a text file."""
-    with open(filename, mode='w', encoding='utf-8') as f:
-        for i in f:
-            return (i.write(text))
+    if filename:
+        with open(filename, mode='w', encoding='utf-8') as f:
+            return (f.write(text))
