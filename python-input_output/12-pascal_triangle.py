@@ -2,7 +2,7 @@
 """It is used to define a function for pascal triangle"""
 
 
-def pascal_traingle(n):
+def pascal_triangle(n):
     """Represent Pascal's Triangle of size n."""
 
     if n <= 0:
