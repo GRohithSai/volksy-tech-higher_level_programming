@@ -5,5 +5,6 @@
 
 def read_lines(filename="", nb_lines=0):
     """Print a given number of lines from a UTF8 text file to stdout."""
-    with open(filename, mode='a', encoding="utf-8") as f:
-        return (f.write(text))
+    if filename:
+        with open(filename, mode='a', encoding="utf-8") as f:
+            return (f.write(text))
