@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""It is used to define a function for pascal triangle"""
+
+
+def pascal_traingle(n):
+    """Represent Pascal's Triangle of size n."""
+
+    if n <= 0:
+        return []
+
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(en(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
+
