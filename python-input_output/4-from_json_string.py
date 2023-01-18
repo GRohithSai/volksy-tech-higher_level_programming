@@ -3,6 +3,6 @@
 import json
 
 
-"""defining a json string"""
 def from_json_string(my_str):
+    """Defining a json string"""
     return (json.load(my_str))
