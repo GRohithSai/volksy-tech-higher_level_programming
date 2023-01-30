@@ -1,2 +1,2 @@
--- It is used to display the number of records in a table
-SELECT * FROM first_table WHERE id = 89;
+-- It is used to count the number of records in a table
+SELECT COUNT(*) FROM first_table WHERE id = 89;
