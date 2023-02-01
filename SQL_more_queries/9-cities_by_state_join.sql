@@ -1,2 +1,2 @@
 -- It is used to display the records in a table with condition
-SELECT id, name, name FROM cities INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id;
+SELECT c.id, c.name, s.name FROM cities as c INNER JOIN states AS s ON c.state_id = s.id ORDER BY c.id;
