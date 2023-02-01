@@ -4,5 +4,5 @@ USE hbtn_0d_usa;
 CREATE TABLE states(id INT, name VARCHAR(256));
 INSERT INTO states VALUES(1, "California"), (2, "Arizona"), (3, "Texas"), (4, "Utah");
 CREATE TABLE cities(id INT, state_id INT, name VARCHAR(256));
-INSERT INTO cities VALUES(1, 1, "San Fransisco"), (2, 1, "San Jose"), (4, 2, "Page"), (6, 3, "Paris"), (7, 3, "Houston"), (8, 3, "Dallas");
+INSERT INTO cities VALUES(1, 1, "San Francisco"), (2, 1, "San Jose"), (4, 2, "Page"), (6, 3, "Paris"), (7, 3, "Houston"), (8, 3, "Dallas");
 SELECT id, name FROM cities WHERE state_id IN(SELECT id FROM states WHERE name = "California") ORDER BY id;
