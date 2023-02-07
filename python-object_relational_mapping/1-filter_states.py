@@ -11,4 +11,4 @@ if __name__ == "__main__":
     c.execute("SELECT * FROM states ORDER BY id WHERE name REGEXP '^[N]' ")
     s = c.fetchall()
     for i in s:
-            print(i)
+        print(i)
