@@ -3,7 +3,7 @@
 
 
 
-iimport sys
+import sys
 import MySQLdb
 
 
