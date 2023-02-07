@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Lists all states with a name strating with N"""
+"""Lists all states with a name starting with N"""
+
+
+import sys
+import MySQLdb
 
 
 if __name__ == "__main__":
