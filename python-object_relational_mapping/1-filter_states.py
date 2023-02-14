@@ -11,4 +11,5 @@ if __name__ == "__main__":
     c.execute("SELECT * FROM states ORDER BY id")
     data = c.fetchall()
     for name in data:
-        print(name)
+        if name[0][1]= "N":
+            print(name)
