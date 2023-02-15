@@ -1,18 +1,43 @@
-#!/usr/bin/python3
-"""
-    Insert here module comment
-    Write a function that prints My name is <first name> <last name>
-    Prototype: def say_my_name(first_name, last_name=""):
-    first_name and last_name must be strings otherwise,
-    raise a TypeError exception with the message
-    first_name must be a string or last_name must be a string
-    You are not allowed to import any module
-"""
+Using ``say_my_name``
+-----------------------
 
+Checks if first_name or last_name is a str
+Prints "My name is <first name> <last name>"
 
-def say_my_name(first_name, last_name=""):
-    """ print my first and last name """
-    str_error = "first_name must be a string or last_name must be a string"
-    if type(first_name) is not str or type(last_name) is not str:
-        raise TypeError(str_error)
-    print("My name is", first_name, last_name)
+First import ``say_my_name``
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+Basic usage:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+First name only input:
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Non string input:
+    >>> say_my_name(3, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Non string input without last_name:
+    >>> say_my_name(3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+No inputs:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Last name wrong input:
+    >>> say_my_name("Bob", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
