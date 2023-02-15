@@ -1,22 +1,14 @@
 #!/usr/bin/python3
+""""It displays all the records with given condtion"""
 
 
-def getAllstates(user2, password2, db2):
-    """Script that gets all the states when called on"""
-    import MySQLdb
-    conn = MySQLdb.connect(host="localhost", port=3306, user=user2,passwd=password2, db=db2, charset="utf-8")
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
-    conn.close()
-
-
-
+import sys
+importMySQLdb
 
 if __name__ == "__main__":
-    import sys
-    """ protected from executing when imported"""
-    getAllStates(sys.argv[1], sys.argv[2], sys.argv[3])
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * FROM states ORDER BY id")
+    for i in c:
+        if i[1][0] == "N":
+            print(i)
