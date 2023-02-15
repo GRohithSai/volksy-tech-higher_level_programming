@@ -1,4 +1,4 @@
-#!/usr.bin/python3
+#!/usr/bin/python3
 """It is used to filter states by user input"""
 
 if __name__ == '__main__':
