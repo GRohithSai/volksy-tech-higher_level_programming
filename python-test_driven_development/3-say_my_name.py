@@ -1,43 +1,17 @@
-Using ``say_my_name``
------------------------
+#!/usr/bin/python3
+"""Defines a name-printing function."""
 
-Checks if first_name or last_name is a str
-Prints "My name is <first name> <last name>"
 
-First import ``say_my_name``
-
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
-
-Now use it:
-
-Basic usage:
-    >>> say_my_name("John", "Smith")
-    My name is John Smith
-
-First name only input:
-    >>> say_my_name("Bob")
-    My name is Bob 
-
-Non string input:
-    >>> say_my_name(3, 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-Non string input without last_name:
-    >>> say_my_name(3)
-    Traceback (most recent call last):
-    ...
-    TypeError: first_name must be a string
-
-No inputs:
-    >>> say_my_name()
-    Traceback (most recent call last):
-    ...
-    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
-
-Last name wrong input:
-    >>> say_my_name("Bob", 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: last_name must be a string
+def say_my_name(first_name, last_name=""):
+    """Print a name.
+    Args:
+        first_name (str): The first name to print.
+        last_name (str): The last name to print.
+    Raises:
+        TypeError: If either of first_name or last_name are not strings.
+    """
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
+    if not isinstance(last_name, str):
+        raise TypeError("last_name must be a string")
+    print("My name is {} {}".format(first_name, last_name))
