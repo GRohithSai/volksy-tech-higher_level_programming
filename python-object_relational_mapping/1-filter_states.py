@@ -12,7 +12,11 @@ def getAllstates(user2, password2, db2):
         print(row)
     cur.close()
     conn.close()
+
+
+
+
 if __name__ == "__main__":
     import sys
     """ protected from executing when imported"""
-    getAllstates(sys.argv[1], sys.argv[2], sys.argv[3])
+    getAllStates(sys.argv[1], sys.argv[2], sys.argv[3])
