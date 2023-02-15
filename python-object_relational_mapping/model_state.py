@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Has class definition of a State and an instance Base = declaratvie_base()"""
+"""Has class definition of a State and an instance Base = declarative_base()"""
 
 
 from sqlalchemy import column, Integer, String
