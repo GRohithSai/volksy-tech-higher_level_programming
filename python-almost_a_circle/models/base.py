@@ -1,83 +1,76 @@
 #!/usr/bin/python3
-"""base Module"""
+# base.py
+# Carlos Barros <1543@holbertonschool.com>
+"""Define Base class"""
 import json
+from os import path
 
 
-class Base:
-    """Base class"""
+class Base(object):
+    """Base: Class define base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializer for Base class"""
+        """__init__ initialized constructor
+
+        Args:
+            id (int): Defaults to None.
+        """
         if id is not None:
             self.id = id
-        if id is None:
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_dictionaries):
+    def to_json_string(list_dict):
+        """Return the JSON serialization of a list of dicts.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
         """
-        Returns the JSON string representation of a
-        list of dictionaries.
-        """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dict is None or len(list_dict) == 0:
             return "[]"
-        if type(list_dictionaries) != list:
-            raise TypeError("list_dictionaries must be a list of dictionaries")
-        for dic in list_dictionaries:
-            if type(dic) is not dict:
-                err = "list_dictionaries must be a list of dictionaries"
-                raise TypeError(err)
-        return json.dumps(list_dictionaries)
+        return json.dumps(list_dict)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        Writes the JSON string representation of a
-        list of instances to a file
-        """
-        filename = cls.__name__ + ".json"
-        dicList = []
-        if list_objs is not None:
-            for obj in list_objs:
-                dicList.append(obj.to_dictionary())
+        """save_to_file: writes the JSON string representation of list_objs to a file
 
-        with open(filename, mode='w', encoding='utf-8') as f:
-            f.write(cls.to_json_string(dicList))
+        Args:
+            list_objs (list): list of instances who inherits of Base
+        """
+        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
+            if list_objs is None:
+                f.write('[]')
+            else:
+                f.write(cls.to_json_string([o.to_dictionary()
+                        for o in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        Returns a list of the JSON string representation.
-        """
-        if json_string is None or (len(json_string) == 0):
-            return([])
-        return json.loads(json_string)
+        """returns the list of the JSON string representation json_string"""
+        if not isinstance(json_string, str) or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        Returns an instance with all attributes already
-        set.
-        """
+        """ Returns an instance with all attributes already set"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1, 0, 0, 'a')
+            dummy = cls(1, 1)
         if cls.__name__ == "Square":
-            dummy = cls(1, 0, 0, 'b')
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """returns a list of instances from a .json file"""
-        filename = cls.__name__ + ".json"
-        try:
-            with open(filename, mode='r', encoding='utf-8') as f:
-                json_string = f.read()
-                dicList = []
-                for obj in cls.from_json_string(json_string):
-                    dicList.append(cls.create(**obj))
-        except:
-            dicList = []
-        return dicList
+        """ Returns a list of instances"""
+        file_name = cls.__name__ + '.json'
+        if path.isfile(file_name):
+            with open(file_name, 'r', encoding='utf-8') as f:
+                dictionary = cls.from_json_string(f.read())
+            return[cls.create(**obj) for obj in dictionary]
+        return []
